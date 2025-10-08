@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% block title %}Events • Temple{% endblock %}
+{% block content %}
+  <h2 class="mb-3">Upcoming Events</h2>
+  <div class="row g-3">
+    {% for e in events %}
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ e.title }}</h5>
+            <p class="card-text">{{ e.description }}</p>
+            <p class="text-muted">{{ e.date|date:"M d, Y h:i A" }}</p>
+            {% if e.signup_enabled %}
+              <a class="btn btn-primary" href="{% url 'event_signup' e.id %}">Sign Up</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No events yet.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

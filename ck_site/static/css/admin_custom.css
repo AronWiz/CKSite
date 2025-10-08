@@ -1,0 +1,10 @@
+#header {
+    background-color: #6f42c1;  /* purple header */
+}
+#branding h1 {
+    color: white;
+}
+.module caption {
+    background-color: #6f42c1;
+    color: white;
+}

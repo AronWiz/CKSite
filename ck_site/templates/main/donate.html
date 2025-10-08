@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% block title %}Donations • Temple{% endblock %}
+{% block content %}
+  <h2>Support the Temple</h2>
+  <p>Your donations help maintain services and community programs.</p>
+
+  <!-- Option A: PayPal hosted donate button (easy start) -->
+  <form action="https://www.paypal.com/donate" method="post" target="_blank">
+    <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL_OR_ID">
+    <input type="hidden" name="no_recurring" value="0">
+    <input type="hidden" name="currency_code" value="CAD">
+    <button type="submit" class="btn btn-success">Donate with PayPal</button>
+  </form>
+
+  <hr class="my-4">
+
+  <!-- Option B: Stripe Payment Link (create in Stripe dashboard, paste link) -->
+  <a href="https://buy.stripe.com/YOUR_PAYMENT_LINK" target="_blank" class="btn btn-outline-primary">
+    Donate via Stripe
+  </a>
+
+  <p class="text-muted mt-3">Replace the placeholders above with your real PayPal/Stripe IDs.</p>
+{% endblock %}

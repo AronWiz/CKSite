@@ -20,4 +20,10 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('events/', views.events, name='events'),
+    path('event/<int:event_id>/signup/', views.signup, name='event_signup'),
+    path('donate/', views.donate, name='donate'),
+    path('contact/', views.contact, name='contact'),
 ]
